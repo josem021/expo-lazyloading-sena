@@ -1,0 +1,83 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 2vw;
+    margin: 2vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.homeComponent {
+    background: rgb(239,34,0);
+    background: linear-gradient(90deg, rgba(239,34,0,1) 0%, rgba(66,1,237,1) 47%, rgb(211, 17, 214) 100%, rgba(239,34,0,1));
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 3s linear infinite;
+}
+article {
+    cursor: pointer;
+    font-size: 1.6vw;
+    border: 1px solid;
+    border-radius: 0.2vw;
+    padding: 2vw;
+    margin-bottom: 3vw;
+    transition: 0.2s ease-in;
+}
+article:hover {
+    background: linear-gradient(90deg, rgba(239,34,0,1) 0%, rgba(66,1,237,1) 47%, rgba(210,17,214,1) 100%, rgba(239,34,0,1));
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+    font-weight: bold;
+}
+.homeComponent {
+    font-size: 2.6vw;
+    font-weight: bold;
+}
+
+.modal1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%; 
+    z-index: 3;
+    
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.905);
+    backdrop-filter: blur(0.15vw);
+    padding: 1vw;
+    border-radius: 2vw;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+.img-modal img {
+    height: 10vw;
+    border-radius: 1vw;
+}
+@keyframes colorchange {
+    0% {color: red; border-color: red;}
+    33% {color: green; border-color: green;}
+    66% {color: blue; border-color: blue;}
+    100% {color: red; border-color: red;}
+}
+@keyframes colorchangeTittle {
+    0% {color: rgb(235, 78, 5);}
+    33% {color: green;}
+    66% {color: blue;}
+    100% {color: red;}
+}
+@keyframes gradient {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
+}

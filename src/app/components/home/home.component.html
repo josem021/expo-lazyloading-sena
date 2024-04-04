@@ -1,0 +1,68 @@
+<main>
+    <div class="homeComponent">Home Component</div>
+    @if(isFormVisible) {
+        @defer(on interaction; on timer(2000)) { 
+            <div class="modal-1">
+                <div class="modal-content">
+                    <div class="img-modal">
+                        <img src="../../../assets/img/perros.jpg" alt="perro-img">
+                        <p>Este es un perrito</p>
+                    </div>
+                </div>  
+            </div>
+        } 
+        @placeholder {
+            <div class="modal-1">
+                <div class="modal-content">
+                    <div class="img-modal">
+                        <img src="../../../assets/img/gato.jpg" alt="gato-img">
+                        <p>Este es un gatito</p>
+                    </div>
+                </div>  
+            </div>
+        } @loading {
+            <div class="cargando">Cargando...</div>
+        } @error {
+            <div class="error">Error al cargar el componente</div>
+        }
+    }
+    <section>
+        <article class="article1" (click)="openModal1()">
+            @defer(on timer(2000)) {
+                <app-big></app-big>
+            } @placeholder {
+                <div class="placeholder">Contenido por defecto del componente</div>
+            } @loading {
+                <div class="cargando">Cargando...</div>
+            } @error {
+                <div class="error">Error al cargar el componente</div>
+            }
+        </article>
+        <article class="article2" (mouseenter)="hoverModal()" (mouseleave)="closeHoverModal()">
+            @defer(on timer(6000)) {
+                <app-huge></app-huge>
+            } @placeholder {
+                <div class="placeholder">Contenido por defecto del componente</div>
+            } @loading {
+                <div class="cargando">Cargando...</div>
+            } @error {
+                <div class="error">Error al cargar el componente</div>
+            }
+        </article>
+    </section>
+    @if(isTrueHover) {
+        @defer(on hover) { }
+        @placeholder {
+            <div class="modal-1">
+                <div class="modal-content">
+                    <div class="img-modal">
+                        <img src="../../../assets/img/charmander.jpg" alt="charmander-img">
+                        <p>Esto es un malandro</p>
+                    </div>
+                </div>  
+            </div>
+        }
+    }
+</main>
+
+
